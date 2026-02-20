@@ -17,12 +17,14 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Android SDK
+      - name: Setup Android SDK (licenses only, no packages)
         uses: android-actions/setup-android@v3
+        with:
+          packages: ''
 
       - name: Install Android SDK components
         run: |
-          yes | sdkmanager "platform-tools" "build-tools;35.0.0" "platforms;android-35"
+          yes | "$ANDROID_HOME/cmdline-tools/16.0/bin/sdkmanager" "tools" "platform-tools" "build-tools;35.0.0" "platforms;android-35"
 
       - name: Create Gradle wrapper if missing
         run: |
