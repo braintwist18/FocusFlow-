@@ -20,7 +20,7 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Android SDK
+      - name: Download Android cmdline-tools
         run: |
           mkdir -p "$ANDROID_HOME/cmdline-tools"
           curl -sL "https://dl.google.com/android/repository/commandlinetools-linux-12266719_latest.zip" -o cmdlinetools.zip
