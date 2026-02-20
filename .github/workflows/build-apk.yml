@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      ANDROID_HOME: ${{ runner.tool_cache }}/android-sdk
+      ANDROID_HOME: /tmp/android-sdk
 
     steps:
       - uses: actions/checkout@v4
